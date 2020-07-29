@@ -2,10 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 function Button(props) {
+  const { name } = props
   return (
-    <div>
-      
-    </div>
+    <button>
+      { name }
+    </button>
   )
 }
 
