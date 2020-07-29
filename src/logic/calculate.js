@@ -15,6 +15,10 @@ const calculate = (dataObject, btnName) => {
 
   } else if (operations.includes(btnName)) {
     dataObject.operation = btnName;
+    if (dataObject.next && dataObject.total) {
+      dataObject.next = dataObject.total;
+      dataObject.total = null;
+    }
   // eslint-disable-next-line max-len
   } else if (dataObject.next && dataObject.operation && numbers.includes(btnName) && !dataObject.total) {
     dataObject.total = btnName;

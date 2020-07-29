@@ -15,15 +15,13 @@ const StyledCalculator = styled.div`
 `;
 
 export default class App extends Component {
-  constructor(props) {
-    super(props)
+
+  state = {
+    obj: {
+    total: null,
+    next: null,
+    operation: null}
   }
-      state = {
-        obj: {
-          total: null,
-          next: null,
-          operation: null}
-        }
 
   handleClick = (buttonName) =>  {
     const { calculate } = calculateObj
@@ -37,8 +35,8 @@ export default class App extends Component {
   render() {
     return (
       <StyledCalculator id="App">
-      <Display result={this.state.obj.total || this.state.obj.next || '0'}/>
-      <ButtonPannel handleClick={this.handleClick} />
+        <Display result={this.state.obj.total || this.state.obj.next || '0'}/>
+        <ButtonPannel handleClick={this.handleClick} />
     </StyledCalculator>
     )
   }

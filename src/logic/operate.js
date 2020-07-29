@@ -3,7 +3,6 @@ import Big from 'big.js';
 const operate = (one, two, operation) => {
   let result = new Big(0);
   const numOne = new Big(one);
-  console.log(operation)
   let numTwo;
   if (two) numTwo = new Big(two);
   switch (operation) {
