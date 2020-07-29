@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Display />
-      <ButtonPannel/>
+      <ButtonPannel />
     </>
   );
 }

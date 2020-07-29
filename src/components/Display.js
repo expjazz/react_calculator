@@ -1,19 +1,19 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function Display(props) {
-  console.log(props)
+  const { result } = props;
   return (
     <div>
-      Display
+      {result}
     </div>
-  )
+  );
 }
 
 Display.propTypes = {
-  result: PropTypes.string
+  result: PropTypes.string,
 };
 
 Display.defaultProps = {
-  result: '0'
-}
+  result: '0',
+};
