@@ -17,9 +17,12 @@ const operate = (one, two, operation) => {
     case '/':
       result = numOne.dividedBy(numTwo);
       break;
+    case '%':
+      result = numOne.times('0.01');
+      break;
     default:
   }
-  return result;
+  return result.toString();
 };
 
 export default { operate };

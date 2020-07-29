@@ -1,33 +1,10 @@
 /* eslint-disable no-param-reassign */
-// const operations = require('./operate');
-const Big = require('big.js');
-
-const operate = (one, two, operation) => {
-  let result = new Big(0);
-  const numOne = new Big(one);
-  const numTwo = new Big(two);
-  switch (operation) {
-    case '+':
-      result = numOne.plus(numTwo);
-      break;
-    case '-':
-      result = numOne.minus(numTwo);
-      break;
-    case '*':
-      result = numOne.times(numTwo);
-      break;
-    case '/':
-      result = numOne.dividedBy(numTwo);
-      break;
-    default:
-  }
-  return result.toString();
-};
+import operationsMethod from './operate';
 
 const calculate = (dataObject, btnName) => {
   const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
   const operations = ['+', '-', '/', '*'];
-  // const { operate } = operations;
+  const { operate } = operationsMethod;
   if (numbers.includes(btnName) && dataObject.next === null) {
     dataObject.next = btnName;
   } else if (btnName === '.' && dataObject.operation === null) {
@@ -45,34 +22,18 @@ const calculate = (dataObject, btnName) => {
   }
 
   if (btnName === '=') {
-    const result = operate(dataObject.next, dataObject.total, dataObject.operation);
-    dataObject.total = result;
+    dataObject.total = operate(dataObject.next, dataObject.total, dataObject.operation);
+  } else if (btnName === 'AC') {
+    dataObject.total = null;
+    dataObject.next = null;
+    dataObject.operation = null;
+  } else if (btnName === '+/-') {
+    if (dataObject.next) dataObject.next *= -1;
+    if (dataObject.total) dataObject.total *= -1;
+  } else if (btnName === '%') {
+    dataObject.total = operate(dataObject.next, null, dataObject.operation);
   }
   return dataObject;
 };
-let obj = {
-  next: null,
-  operation: null,
-  total: null,
-};
-obj = calculate(obj, '5');
-obj = calculate(obj, '5');
 
-obj = calculate(obj, '.');
-
-obj = calculate(obj, '5');
-obj = calculate(obj, '5');
-
-obj = calculate(obj, '+');
-
-obj = calculate(obj, '1');
-obj = calculate(obj, '2');
-
-obj = calculate(obj, '.');
-obj = calculate(obj, '3');
-obj = calculate(obj, '3');
-obj = calculate(obj, '=');
-
-console.log(obj);
-
-// export default { calculate };
+export default { calculate };

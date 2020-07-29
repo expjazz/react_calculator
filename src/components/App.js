@@ -3,6 +3,7 @@ import './App.scss';
 import styled from 'styled-components';
 import Display from './Display';
 import ButtonPannel from './ButtonPannel';
+import calculateObj from '../logic/calculate';
 
 const StyledCalculator = styled.div`
   width: 700px;
@@ -14,6 +15,12 @@ const StyledCalculator = styled.div`
 `;
 
 function App() {
+  const { calculate } = calculateObj;
+  console.log(calculate({
+    next: '3',
+    total: '10',
+    operation: '+',
+  }, '='));
   return (
     <StyledCalculator id="App">
       <Display />
