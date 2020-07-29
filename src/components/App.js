@@ -11,7 +11,7 @@ const StyledCalculator = styled.div`
 
 function App() {
   return (
-    <StyledCalculator>
+    <StyledCalculator id="App">
       <Display />
       <ButtonPannel />
     </StyledCalculator>
