@@ -1,5 +1,4 @@
-# Project Save the pets - Javascript Game
-
+# Project Calculator
 This is a calculator built with react that does math operations with 2 numbers.
 
 
