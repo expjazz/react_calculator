@@ -21,7 +21,7 @@ const operate = (one, two, operation) => {
       break;
     default:
   }
-  return result;
+  return result.toString();
 };
 
 const calculate = (dataObject, btnName) => {
@@ -43,8 +43,11 @@ const calculate = (dataObject, btnName) => {
   } else if (numbers.includes(btnName) && dataObject.operation && dataObject.total) {
     dataObject.total += btnName;
   }
-  const result = operate(parseInt(dataObject.total), parseInt(dataObject.next), dataObject.operation);
-  console.log(result);
+
+  if (btnName === '=') {
+    const result = operate(dataObject.next, dataObject.total, dataObject.operation);
+    dataObject.total = result;
+  }
   return dataObject;
 };
 let obj = {
@@ -68,6 +71,7 @@ obj = calculate(obj, '2');
 obj = calculate(obj, '.');
 obj = calculate(obj, '3');
 obj = calculate(obj, '3');
+obj = calculate(obj, '=');
 
 console.log(obj);
 
