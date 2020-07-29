@@ -37,7 +37,7 @@ export default class App extends Component {
   render() {
     return (
       <StyledCalculator id="App">
-      <Display />
+      <Display result={this.state.obj.total || this.state.obj.next || '0'}/>
       <ButtonPannel handleClick={this.handleClick} />
     </StyledCalculator>
     )

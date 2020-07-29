@@ -11,10 +11,10 @@ const operate = (one, two, operation) => {
     case '-':
       result = numOne.minus(numTwo);
       break;
-    case '*':
+    case 'X':
       result = numOne.times(numTwo);
       break;
-    case '/':
+    case '÷':
       result = numOne.dividedBy(numTwo);
       break;
     case '%':
