@@ -38,9 +38,8 @@ export default function ButtonPannel() {
         <Button name="+" />
       </div>
       <div className="row rowFive">
-        <Button name="0" />
+        <Button name="0" wide />
         <Button name="." />
-        <Button name="," />
         <Button name="=" />
       </div>
     </StyledButtomPanel>

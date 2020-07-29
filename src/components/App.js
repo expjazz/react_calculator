@@ -7,6 +7,10 @@ import ButtonPannel from './ButtonPannel';
 const StyledCalculator = styled.div`
   width: 700px;
   margin: auto;
+  display: "flex";
+  flex-direction: "column";
+  flex-wrap: "wrap";
+
 `;
 
 function App() {

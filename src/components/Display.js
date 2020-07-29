@@ -7,10 +7,14 @@ export default function Display(props) {
   const StyledDisplay = styled.div`
     background: gray;
     height: 100px;
+    display: flex;
+    justify-content: flex-end;
     p {
       font-weight: bold;
-      padding: 5px;
+      padding: 1.5rem;
       text-align: right;
+      font-size: 35px;
+      color: white;
     }
   `;
   return (
