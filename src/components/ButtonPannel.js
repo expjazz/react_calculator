@@ -10,38 +10,40 @@ const StyledButtomPanel = styled.div`
   }
   
   `;
-export default function ButtonPannel() {
+export default function ButtonPannel(props) {
+  const { handleClick } = props;
   return (
     <StyledButtomPanel>
       <div className="row rowOne">
-        <Button name="AC" />
-        <Button name="+/-" />
-        <Button name="%" />
-        <Button name="÷" />
+        <Button handleClick={ handleClick }  name="AC" />
+        <Button handleClick={ handleClick } name="+/-" />
+        <Button handleClick={ handleClick } name="%" />
+        <Button handleClick={ handleClick } name="÷" />
       </div>
       <div className="row rowTwo">
-        <Button name="7" />
-        <Button name="8" />
-        <Button name="9" />
-        <Button name="X" />
+        <Button handleClick={ handleClick } name="7" />
+        <Button handleClick={ handleClick } name="8" />
+        <Button handleClick={ handleClick } name="9" />
+        <Button handleClick={ handleClick } name="X" />
       </div>
       <div className="row rowThree">
-        <Button name="4" />
-        <Button name="5" />
-        <Button name="6" />
-        <Button name="-" />
+        <Button handleClick={ handleClick } name="4" />
+        <Button handleClick={ handleClick } name="5" />
+        <Button handleClick={ handleClick } name="6" />
+        <Button handleClick={ handleClick } name="-" />
       </div>
       <div className="row rowFour">
-        <Button name="1" />
-        <Button name="2" />
-        <Button name="3" />
-        <Button name="+" />
+        <Button handleClick={ handleClick } name="1" />
+        <Button handleClick={ handleClick } name="2" />
+        <Button handleClick={ handleClick } name="3" />
+        <Button handleClick={ handleClick } name="+" />
       </div>
       <div className="row rowFive">
-        <Button name="0" wide />
-        <Button name="." />
-        <Button name="=" />
+        <Button handleClick={ handleClick } name="0" wide />
+        <Button handleClick={ handleClick } name="." />
+        <Button handleClick={ handleClick } name="=" />
       </div>
     </StyledButtomPanel>
   );
 }
+

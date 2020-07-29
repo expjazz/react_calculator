@@ -13,9 +13,9 @@ const StyledButton = styled.button`
 
   `;
 function Button(props) {
-  const { name, color, wide } = props;
+  const { name, color, wide, handleClick } = props;
   return (
-    <StyledButton color={color} wide={wide} type="button">
+    <StyledButton color={color} wide={wide} type="button" onClick={() => handleClick(name)}>
       <p>
         { name }
       </p>
