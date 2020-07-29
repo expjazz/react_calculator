@@ -5,10 +5,10 @@ import ButtonPannel from './ButtonPannel';
 
 function App() {
   return (
-    <>
+    <div id="App">
       <Display />
       <ButtonPannel />
-    </>
+    </div>
   );
 }
 
