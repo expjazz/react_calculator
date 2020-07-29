@@ -15,12 +15,9 @@ const StyledCalculator = styled.div`
 `;
 
 function App() {
+  // eslint-disable-next-line no-unused-vars
   const { calculate } = calculateObj;
-  console.log(calculate({
-    next: '3',
-    total: '10',
-    operation: '+',
-  }, '='));
+
   return (
     <StyledCalculator id="App">
       <Display />
