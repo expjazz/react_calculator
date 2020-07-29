@@ -3,7 +3,9 @@ import Big from 'big.js';
 const operate = (one, two, operation) => {
   let result = new Big(0);
   const numOne = new Big(one);
-  const numTwo = new Big(two);
+  console.log(operation)
+  let numTwo;
+  if (two) numTwo = new Big(two);
   switch (operation) {
     case '+':
       result = numOne.plus(numTwo);
@@ -15,7 +17,7 @@ const operate = (one, two, operation) => {
       result = numOne.times(numTwo);
       break;
     case '÷':
-      result = numOne.dividedBy(numTwo);
+      result = numOne.div(numTwo);
       break;
     case '%':
       result = numOne.times('0.01');

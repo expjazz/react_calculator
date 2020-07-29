@@ -9,8 +9,10 @@ const calculate = (dataObject, btnName) => {
     dataObject.next = btnName;
   } else if (btnName === '.' && dataObject.operation === null) {
     dataObject.next += btnName;
+
   } else if (numbers.includes(btnName) && dataObject.operation === null && dataObject.next) {
     dataObject.next += btnName;
+
   } else if (operations.includes(btnName)) {
     dataObject.operation = btnName;
   // eslint-disable-next-line max-len
@@ -21,7 +23,7 @@ const calculate = (dataObject, btnName) => {
   } else if (numbers.includes(btnName) && dataObject.operation && dataObject.total) {
     dataObject.total += btnName;
   }
-
+  
   if (btnName === '=') {
     dataObject.total = operate(dataObject.next, dataObject.total, dataObject.operation);
   } else if (btnName === 'AC') {
@@ -32,6 +34,7 @@ const calculate = (dataObject, btnName) => {
     if (dataObject.next) dataObject.next *= -1;
     if (dataObject.total) dataObject.total *= -1;
   } else if (btnName === '%') {
+    dataObject.operation = btnName;
     dataObject.total = operate(dataObject.next, null, dataObject.operation);
   }
   return dataObject;
