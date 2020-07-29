@@ -2,8 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from './Button';
 
-export default function ButtonPannel() {
-  const StyledButtomPanel = styled.div`
+const StyledButtomPanel = styled.div`
   .row {
     height: 100px;
     display: flex;
@@ -11,6 +10,7 @@ export default function ButtonPannel() {
   }
   
   `;
+export default function ButtonPannel() {
   return (
     <StyledButtomPanel>
       <div className="row rowOne">
