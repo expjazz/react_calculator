@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-export default function Display(props) {
-  const { result } = props;
-  const StyledDisplay = styled.div`
+const StyledDisplay = styled.div`
     background: gray;
     height: 100px;
     display: flex;
@@ -17,6 +15,8 @@ export default function Display(props) {
       color: white;
     }
   `;
+export default function Display(props) {
+  const { result } = props;
   return (
     <StyledDisplay>
       <p>
