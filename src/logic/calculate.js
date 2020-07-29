@@ -9,27 +9,42 @@ const calculate = (dataObject, btnName) => {
     dataObject.next = btnName;
   } else if (btnName === '.' && dataObject.operation === null) {
     dataObject.next += btnName;
-
-  } else if (numbers.includes(btnName) && dataObject.operation === null && dataObject.next) {
+  } else if (
+    numbers.includes(btnName)
+    && dataObject.operation === null
+    && dataObject.next
+  ) {
     dataObject.next += btnName;
-
   } else if (operations.includes(btnName)) {
     dataObject.operation = btnName;
     if (dataObject.next && dataObject.total) {
       dataObject.next = dataObject.total;
       dataObject.total = null;
     }
-  // eslint-disable-next-line max-len
-  } else if (dataObject.next && dataObject.operation && numbers.includes(btnName) && !dataObject.total) {
+    // eslint-disable-next-line max-len
+  } else if (
+    dataObject.next
+    && dataObject.operation
+    && numbers.includes(btnName)
+    && !dataObject.total
+  ) {
     dataObject.total = btnName;
   } else if (btnName === '.' && dataObject.operation) {
     dataObject.total += btnName;
-  } else if (numbers.includes(btnName) && dataObject.operation && dataObject.total) {
+  } else if (
+    numbers.includes(btnName)
+    && dataObject.operation
+    && dataObject.total
+  ) {
     dataObject.total += btnName;
   }
-  
+
   if (btnName === '=') {
-    dataObject.total = operate(dataObject.next, dataObject.total, dataObject.operation);
+    dataObject.total = operate(
+      dataObject.next,
+      dataObject.total,
+      dataObject.operation,
+    );
   } else if (btnName === 'AC') {
     dataObject.total = null;
     dataObject.next = null;

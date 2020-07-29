@@ -11,37 +11,37 @@ const StyledCalculator = styled.div`
   display: "flex";
   flex-direction: "column";
   flex-wrap: "wrap";
-
 `;
 
 export default class App extends Component {
-
-  state = {
-    obj: {
-    total: null,
-    next: null,
-    operation: null}
+  constructor() {
+    super();
+    this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      obj: {
+        total: null,
+        next: null,
+        operation: null,
+      },
+    };
   }
 
-  handleClick = (buttonName) =>  {
-    const { calculate } = calculateObj
-    const newObj = calculate(this.state.obj, buttonName)
+  handleClick(buttonName) {
+    const { calculate } = calculateObj;
+    const { obj } = this.state;
+    const newObj = calculate(obj, buttonName);
     this.setState({
-      obj: newObj
-    })
-
+      obj: newObj,
+    });
   }
 
   render() {
+    const { obj } = this.state;
     return (
       <StyledCalculator id="App">
-        <Display result={this.state.obj.total || this.state.obj.next || '0'}/>
+        <Display result={obj.total || obj.next || '0'} />
         <ButtonPannel handleClick={this.handleClick} />
-    </StyledCalculator>
-    )
+      </StyledCalculator>
+    );
   }
 }
-
-
-
-
