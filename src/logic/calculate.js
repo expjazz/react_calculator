@@ -50,8 +50,8 @@ const calculate = (dataObject, btnName) => {
     dataObject.next = null;
     dataObject.operation = null;
   } else if (btnName === '+/-') {
-    if (dataObject.next) dataObject.next *= -1;
-    if (dataObject.total) dataObject.total *= -1;
+    if (dataObject.next) dataObject.total *= -1;
+    if (!dataObject.total) dataObject.next *= -1;
   } else if (btnName === '%') {
     dataObject.operation = btnName;
     dataObject.total = operate(dataObject.next, null, dataObject.operation);
