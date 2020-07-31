@@ -20,10 +20,10 @@ const calculate = (dataObject, btnName) => {
   ) {
     dataObject.next += btnName;
   } else if (operations.includes(btnName)) {
-    dataObject.operation = btnName;
-    if (dataObject.next && dataObject.total) {
+    if (dataObject.next && dataObject.total && dataObject.operation !== '=') {
       dataObject.total = operate(dataObject.next, dataObject.total, dataObject.operation);
     }
+    dataObject.operation = btnName;
     if (dataObject.next && dataObject.total) {
       dataObject.next = dataObject.total;
       dataObject.total = null;
@@ -52,6 +52,7 @@ const calculate = (dataObject, btnName) => {
       dataObject.total,
       dataObject.operation,
     );
+    dataObject.operation = '=';
   } else if (btnName === 'AC') {
     dataObject.total = null;
     dataObject.next = null;
