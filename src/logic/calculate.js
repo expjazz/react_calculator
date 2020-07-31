@@ -5,6 +5,11 @@ const calculate = (dataObject, btnName) => {
   const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
   const operations = ['+', '-', '÷', 'X'];
   const { operate } = operationsMethod;
+  if (dataObject.total && dataObject.total.includes('no')) {
+    console.log('haha');
+    dataObject.next = null;
+    dataObject.total = null;
+  }
   if (numbers.includes(btnName) && dataObject.next === null) {
     dataObject.next = btnName;
   } else if (btnName === '.' && dataObject.operation === null) {

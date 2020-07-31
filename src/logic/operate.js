@@ -4,6 +4,7 @@ const operate = (one, two, operation) => {
   let result = new Big(0);
   const numOne = new Big(one);
   let numTwo;
+  let temp = false;
   if (two) numTwo = new Big(two);
   switch (operation) {
     case '+':
@@ -16,7 +17,8 @@ const operate = (one, two, operation) => {
       result = numOne.times(numTwo);
       break;
     case '÷':
-      result = numOne.div(numTwo);
+      if (one === '0' || two === '0') temp = true;
+      result = temp ? 'no division by 0' : numOne.div(numTwo);
       break;
     case '%':
       result = numOne.times('0.01');
