@@ -9,16 +9,18 @@ const StyledDisplay = styled.div`
   justify-content: flex-end;
   p {
     font-weight: bold;
-    padding: 1.5rem;
     text-align: right;
-    font-size: 35px;
     color: white;
+    ${(props => (props.result.length < 39 ? `font-size: 35px;
+    padding: 1.5rem;` : 'font-size: 15px; overflow-wrap: anywhere;'))}
+ 
   }
 `;
 export default function Display(props) {
   const { result } = props;
+  console.log(result.length > 30);
   return (
-    <StyledDisplay>
+    <StyledDisplay result={result}>
       <p>{result}</p>
     </StyledDisplay>
   );

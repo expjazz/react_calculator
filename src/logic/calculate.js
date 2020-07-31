@@ -6,7 +6,6 @@ const calculate = (dataObject, btnName) => {
   const operations = ['+', '-', '÷', 'X'];
   const { operate } = operationsMethod;
   if (dataObject.total && dataObject.total.includes('no')) {
-    console.log('haha');
     dataObject.next = null;
     dataObject.total = null;
   }
