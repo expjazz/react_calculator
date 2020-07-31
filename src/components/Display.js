@@ -18,7 +18,6 @@ const StyledDisplay = styled.div`
 `;
 export default function Display(props) {
   const { result } = props;
-  console.log(result.length > 30);
   return (
     <StyledDisplay result={result}>
       <p>{result}</p>

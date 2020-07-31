@@ -22,6 +22,9 @@ const calculate = (dataObject, btnName) => {
   } else if (operations.includes(btnName)) {
     dataObject.operation = btnName;
     if (dataObject.next && dataObject.total) {
+      dataObject.total = operate(dataObject.next, dataObject.total, dataObject.operation);
+    }
+    if (dataObject.next && dataObject.total) {
       dataObject.next = dataObject.total;
       dataObject.total = null;
     }
